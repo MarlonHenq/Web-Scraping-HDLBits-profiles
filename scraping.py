@@ -19,7 +19,7 @@ with open('profiles.json') as json_file:
         #get <td> value before '<td>Current rank:</td>'
         rank = table.find('td', string='Current rank:').find_next('td').text.strip()
         #add rank in user data
-        user['rank'] = rank
+        user['rank'] = int(rank)
 
 #order users by rank and print
 users = sorted(data, key=lambda k: k['rank'])
