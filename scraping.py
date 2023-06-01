@@ -25,11 +25,12 @@ with open('profiles.json') as json_file:
 users = sorted(data, key=lambda k: k['rank'])
 
 
-#save users in csv file
-df = pandas.DataFrame(users)
-df.to_csv('output.csv', index=False)
 
 #print users colocation, name and rank line by line
 for i in range(len(users)):
+    users[i]['position'] = i + 1
     print(str(i) + " " + users[i]['Name'] + " " + str(users[i]['rank']) + "\n")
 
+#save users in csv file
+df = pandas.DataFrame(users)
+df.to_csv('output.csv', index=False)
