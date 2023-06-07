@@ -29,7 +29,7 @@ users = sorted(data, key=lambda k: k['rank'])
 #print users colocation, name and rank line by line
 for i in range(len(users)):
     users[i]['position'] = i + 1
-    print(str(i+1) + " " + users[i]['Name'] + " " + str(users[i]['rank']) + "\n")
+    print(str(i+1) + " || " + users[i]['Name'] + " || " + str(users[i]['rank']) + " || " + url + users[i]['id'] +"\n")
 
 #save users in csv file
 df = pandas.DataFrame(users)
